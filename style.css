@@ -76,6 +76,8 @@ a { color: inherit; }
 .button:hover { transform: translateY(-2px); }
 .button-primary { color: #071525; background: var(--cyan); box-shadow: 0 12px 28px rgba(52,199,216,.24); }
 .button-ghost { color: var(--white); border: 1px solid rgba(255,255,255,.35); }
+.button-text { min-height: 50px; padding-inline: 8px; color: #d8e5f4; }
+.button-text:hover { color: var(--white); }
 .availability { padding: 28px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); box-shadow: var(--shadow); }
 .availability strong { display: block; margin-bottom: 8px; font-size: 1.25rem; }
 .availability p { margin: 0; color: #c7d7e8; }
@@ -95,7 +97,7 @@ section { padding: 92px 0; }
 .section-head p { margin: 0; color: var(--muted); }
 
 .metrics { margin-top: -32px; position: relative; z-index: 3; padding: 0; }
-.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 .metric { padding: 28px; border-right: 1px solid var(--line); }
 .metric:last-child { border-right: 0; }
 .metric strong { display: block; color: var(--blue); font-size: 1.9rem; line-height: 1.15; letter-spacing: -.04em; }
@@ -121,6 +123,15 @@ section { padding: 92px 0; }
 .experience-item h3 { margin: 0 0 8px; font-size: 1.25rem; }
 .experience-item p { margin: 0; color: var(--muted); }
 
+.testimonials { background: var(--white); }
+.testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.testimonial-card { position: relative; margin: 0; padding: 34px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 30px rgba(8,21,38,.06); }
+.testimonial-card::before { content: "“"; position: absolute; top: 6px; right: 24px; color: rgba(47,125,244,.14); font: 700 5.5rem/1 Georgia, serif; }
+.testimonial-card blockquote { position: relative; margin: 0 0 24px; color: var(--ink); font-size: 1.15rem; line-height: 1.65; }
+.testimonial-card figcaption strong, .testimonial-card figcaption span { display: block; }
+.testimonial-card figcaption strong { color: var(--blue); }
+.testimonial-card figcaption span { margin-top: 3px; color: var(--muted); font-size: .88rem; }
+
 .tool-cloud { display: flex; flex-wrap: wrap; gap: 12px; }
 .tool-cloud span { padding: 10px 16px; background: var(--white); border: 1px solid var(--line); border-radius: 999px; color: #34465d; font-size: .9rem; font-weight: 700; }
 
@@ -135,7 +146,6 @@ section { padding: 92px 0; }
   .hero-grid, .about-grid, .contact-panel { grid-template-columns: 1fr; }
   .metric-grid { grid-template-columns: repeat(2, 1fr); }
   .metric:nth-child(2) { border-right: 0; }
-  .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .card-grid { grid-template-columns: 1fr 1fr; }
   .experience-item { grid-template-columns: 1fr; gap: 8px; }
   .hero-profile { margin: 10px auto 0; }
@@ -168,6 +178,9 @@ section { padding: 92px 0; }
 .parkmatic-story { padding: 38px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); }
 .parkmatic-story p { color: #cad8e8; }
 .parkmatic-story p:last-child { margin-bottom: 0; }
+.parkmatic-story details { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.13); }
+.parkmatic-story summary { color: var(--cyan); font-weight: 800; cursor: pointer; }
+.parkmatic-story details p { margin-bottom: 0; }
 .role-kicker { margin-top: 0; color: var(--cyan) !important; font-weight: 800; }
 .achievement-card { padding: 38px; background: linear-gradient(145deg, #123a5b, #10223a); border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); box-shadow: var(--shadow); }
 .achievement-card h3 { margin: 0 0 14px; font-size: 1.65rem; line-height: 1.18; }
@@ -180,7 +193,7 @@ section { padding: 92px 0; }
 .skill-columns h3 { margin: 0 0 18px; font-size: 1.15rem; }
 
 @media (max-width: 850px) {
-  .parkmatic-grid, .skill-columns { grid-template-columns: 1fr; }
+  .parkmatic-grid, .skill-columns, .testimonial-grid { grid-template-columns: 1fr; }
   .responsibility-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
